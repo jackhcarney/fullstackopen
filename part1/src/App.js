@@ -6,6 +6,10 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
 }
 
+const Display = ({text}) => (
+  <h1>{text}</h1>
+)
+
 const Button = (props) => (
 <button onClick={props.handleClick}>{props.text}</button>
 )
@@ -34,6 +38,9 @@ const App = () => {
   const [selected, setSelected] = useState(0)
   const [points, setPoints] = useState(Array(anecdotes.length).fill(0))
   console.log("points", points)
+  const maxVote = Math.max(...points)
+  const maxVoteIndex = points.indexOf(maxVote)
+
 
   const handleAnecdoteClick = () => {
     console.log("next anecdote button has been clicked.")
@@ -49,9 +56,13 @@ const App = () => {
 
   return (
     <div>
+      <Display text="Anecdote of the day" />
       <Anecdote anecdotes={anecdotes} selected={selected} />
       <Vote points={points[selected]}/>
       <Button handleClick={handleVoteClick} text='vote' /><Button handleClick={handleAnecdoteClick} text='next anecdote' />
+      <Display text="Anecdote with most votes" />
+      <Anecdote anecdotes={anecdotes} selected={maxVoteIndex} />
+      <Vote points={points[maxVoteIndex]} />
     </div>
   )
 }
