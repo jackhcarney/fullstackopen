@@ -6,13 +6,18 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
 }
 
-
 const Button = (props) => (
 <button onClick={props.handleClick}>{props.text}</button>
 )
 
 const Anecdote = ({anecdotes, selected}) => (
   <div>{anecdotes[selected]}</div>
+)
+
+const Vote = ({points}) => (
+  <div>
+    has {points} votes
+  </div>
 )
 
 const App = () => {
@@ -27,16 +32,26 @@ const App = () => {
   ]
    
   const [selected, setSelected] = useState(0)
+  const [points, setPoints] = useState(Array(anecdotes.length).fill(0))
+  console.log("points", points)
 
   const handleAnecdoteClick = () => {
-    console.log("It has been clicked.")
+    console.log("next anecdote button has been clicked.")
     return(setSelected(getRandomInt(0,anecdotes.length)))
+  }
+
+  const handleVoteClick = () => {
+    console.log("vote button has been clicked.")
+    const newPoints = [...points]
+    newPoints[selected] += 1
+    return(setPoints(newPoints))
   }
 
   return (
     <div>
       <Anecdote anecdotes={anecdotes} selected={selected} />
-      <Button handleClick={handleAnecdoteClick} text='next anecdote' />
+      <Vote points={points[selected]}/>
+      <Button handleClick={handleVoteClick} text='vote' /><Button handleClick={handleAnecdoteClick} text='next anecdote' />
     </div>
   )
 }
