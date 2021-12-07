@@ -40,7 +40,7 @@ const App = () => {
   console.log("points", points)
   const maxVote = Math.max(...points)
   const maxVoteIndex = points.indexOf(maxVote)
-
+  
 
   const handleAnecdoteClick = () => {
     console.log("next anecdote button has been clicked.")
