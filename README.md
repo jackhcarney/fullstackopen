@@ -3,7 +3,7 @@ This repo is my progress on completing the Full Stack open course starting on 20
 
 This course is a good introduction to modern JavaScript-based web development. The main focus is on building single page applications with ReactJS that use REST APIs built with Node.js.
 
-[Part 0 - Fundamentals of Web Apps](https://github.com/jackhcarney/fullstackopen/blob/3ae3809b687a1869baaa5dbb1c8d11469ad8694f/part0)<br>
+[Part 0 - Fundamentals of Web Apps](https://github.com/jackhcarney/fullstackopen/blob/part0)<br>
 [Part 1 - Introduction to React](https://github.com/jackhcarney/fullstackopen/blob/main/part1)<br>
 [Part 2 - Communicating with server](https://github.com/jackhcarney/fullstackopen/blob/main/part2)<br>
 [Part 3 - Programming a server with NodeJS and Express](https://github.com/jackhcarney/fullstackopen/blob/main/part3)<br>
