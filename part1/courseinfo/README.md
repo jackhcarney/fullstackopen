@@ -1,2 +1,2 @@
 # Course Information
-This is Exercises 1.1-1.5
+This program is end result of Exercises 1.1-1.5
